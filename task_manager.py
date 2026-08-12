@@ -50,6 +50,12 @@ while True:
                 index=tasks.index(complete_task)
                 tasks[index]=complete_task+"(Completed)"
                 print("Task Completed Successfully!")
+                file=open("tasks.txt","w")
+
+                for task in tasks:
+                    file.write(task+"\n")
+
+                file.close()
             else:
                 print("Task Not Found!")
 
@@ -59,5 +65,11 @@ while True:
         if delete_task in tasks:
             tasks.remove(delete_task)
             print("Task Deleted Successfully!")
+            
+            file=open("tasks.txt","w")
+
+            for task in tasks:
+                file.write(task+"\n")
+            file.close()
         else:
             print("Task Not Found!")
